@@ -2,13 +2,14 @@
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+
 using TcpClient = NetCoreServer.TcpClient;
 
 namespace TcpChatClient
 {
     class ChatClient : TcpClient
     {
-        public ChatClient(string address, int port) : base(address, port) {}
+        public ChatClient(string address, int port) : base(address, port) { }
 
         public void DisconnectAndStop()
         {
@@ -78,10 +79,11 @@ namespace TcpChatClient
             Console.WriteLine("Press Enter to stop the client or '!' to reconnect the client...");
 
             // Perform text input
-            for (;;)
+            for (; ; )
             {
                 string line = Console.ReadLine();
                 if (string.IsNullOrEmpty(line))
+
                     break;
 
                 // Disconnect the client
